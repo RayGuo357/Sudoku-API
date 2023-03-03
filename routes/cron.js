@@ -3,6 +3,6 @@ const cronRoutes = express.Router();
 
 const cronController = require("../controllers/cron");
 
-cronRoutes.route("/set").get(cronController.postDaily);
+cronRoutes.route("/set").post(cronController.postDaily);
 
 module.exports = cronRoutes;
