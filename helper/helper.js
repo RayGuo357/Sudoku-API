@@ -97,16 +97,16 @@ const solver = (board) => {
 
 function validSudoku(board) {
     for (let i = 0; i < 9; i++) {
-         for (let j = 0; j < 9; j++) {
-             const value = board[i][j];
-             if (value !== 0) {
-                 if (!checkRow(board, i, j, value) || !checkColumn(board, i, j, value) | !checkSquare(board, i, j, value)) {
-                     return false;
-                 }
-             }
-         }
-     }
-     return true;
- }
+        for (let j = 0; j < 9; j++) {
+            const value = board[i][j];
+            if (value !== 0) {
+                if (!checkRow(board, i, value) || !checkColumn(board, j, value) || !checkSquare(board, i, j, value)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
 
 module.exports = { randomBoard, getTodaysDate, solver, validSudoku }
