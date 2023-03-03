@@ -9,6 +9,9 @@ app.use(express.json());
 require("./db/conn")();
 
 const apiRoutes = require("./routes/api");
+const cronRoutes = require("./routes/cron")
+
+app.use("/cron", cronRoutes);
 
 app.use("/api", apiRoutes);
 
